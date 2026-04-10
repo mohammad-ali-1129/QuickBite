@@ -5,7 +5,7 @@ const AppDownload = () => {
   return (
     <div className='app-download' id='app-download'>
       <p>For Better Experience Download <br/> QuickBite App</p>
-      <div class="app-download-platforms">
+      <div className="app-download-platforms">
         <img src={assets.play_store} alt=""/>
         <img src={assets.app_store} alt=""/>
       </div>
