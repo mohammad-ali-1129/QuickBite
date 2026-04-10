@@ -5,8 +5,8 @@ const Cart = () => {
   const {cartItems, food_list, removeFromCart} = useContext(StoreContext)
   return (
     <div className='cart'>
-      <div class="cart-items">
-        <div class="cart-items-title">
+      <div className="cart-items">
+        <div className="cart-items-title">
           <p>Items</p>
           <p>Title</p>
           <p>Price</p>
@@ -20,8 +20,16 @@ const Cart = () => {
           food_list.map((item, index)=>{
             if(cartItems[item._id] > 0){
               return(
+                <div>
                 <div className='cart-items-title cart-items-item'>
+                  <img src={item.image} alt=""/>
                   <p>{item.name}</p>
+                  <p>${item.price}</p>
+                  <p>{cartItems[item._id]}</p>
+                  <p>${item.price * cartItems[item._id]}</p>
+                  <p onClick={() => removeFromCart(item._id)} className='cross'>x</p>
+                </div>
+                <hr/>
                 </div>
               )
             }
